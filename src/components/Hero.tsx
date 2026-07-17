@@ -43,7 +43,7 @@ export default function Hero() {
           <div className="mt-12 flex items-center gap-4 text-[13px] text-foreground-muted font-sans">
             <span>{profile.email}</span>
             <span className="text-border">|</span>
-            <span>{profile.phone}</span>
+            <span>{profile.telegram}</span>
           </div>
         </div>
       </div>

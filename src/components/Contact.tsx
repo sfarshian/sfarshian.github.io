@@ -1,5 +1,5 @@
 import { profile, socialLinks } from "../data";
-import { Mail } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -18,13 +18,23 @@ export default function Contact() {
             connecting with fellow engineers and technologists.
           </p>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             <a
               href={`mailto:${profile.email}`}
               className="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-primary text-primary-foreground text-[14px] font-medium hover:bg-primary-hover transition-colors duration-200 cursor-pointer"
             >
               <Mail size={16} />
               {profile.email}
+            </a>
+            <br />
+            <a
+              href="https://t.me/sfarshian"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-5 py-3 rounded-lg border border-border bg-white text-[14px] font-medium text-foreground-secondary hover:text-primary hover:border-primary/30 transition-all duration-200 cursor-pointer"
+            >
+              <Send size={16} />
+              {profile.telegram}
             </a>
           </div>
 

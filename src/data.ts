@@ -1,7 +1,7 @@
 import type { ComponentType, SVGProps } from "react";
 import {
   Mail,
-  Phone,
+  Send,
   Briefcase,
   Code2,
   Wrench,
@@ -36,7 +36,7 @@ export const profile = {
   title: "Software Developer & Industrial Engineer",
   bio: "I bridge the gap between systems thinking and technical innovation. I am proficient in Python, Java, and databases such as MySQL, Oracle, and MongoDB. I am particularly drawn to mathematical optimisation, machine learning, and the transformative power of data.",
   email: "sfarshian3@gmail.com",
-  phone: "+98 9100487780",
+  telegram: "@sfarshian",
   github: "github.com/sfarshian",
   linkedin: "linkedin.com/in/sahand-farshian",
 } as const;
@@ -125,9 +125,9 @@ export const socialLinks = [
     icon: Mail,
   },
   {
-    label: "Phone",
-    href: "tel:+989100487780",
-    icon: Phone,
+    label: "Telegram",
+    href: "https://t.me/sfarshian",
+    icon: Send,
   },
 ] as const;
 
