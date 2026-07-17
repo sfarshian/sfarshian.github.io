@@ -3,12 +3,12 @@ import { Wrench } from "lucide-react";
 
 export default function TechnicalArsenal() {
   return (
-    <section id="arsenal" className="section-padding">
+    <section id="skills" className="section-padding">
       <div className="section-container">
         <div className="flex items-center gap-3 mb-12">
           <Wrench size={22} className="text-primary" />
           <h2 className="text-2xl md:text-3xl font-serif font-semibold tracking-tight">
-            Technical Arsenal
+            Skills
           </h2>
         </div>
 

@@ -22,6 +22,7 @@ export interface WorkExperience {
 export interface Project {
   title: string;
   description: string;
+  githubUrl: string;
   icon: IconType;
 }
 
@@ -72,7 +73,7 @@ export const skillCategories: SkillCategory[] = [
   {
     name: "Core Frameworks",
     icon: Layers,
-    skills: ["Spring Boot", "FastAPI", "Hibernate"],
+    skills: ["Spring Boot", "Spring", "FastAPI", "Hibernate", "Spring Data JPA", "Eureka", "Spring Cloud Consul", "Spring Security"],
   },
   {
     name: "Tools & Databases",
@@ -98,12 +99,14 @@ export const projects: Project[] = [
     title: "Multi-Attribute Decision Making (MADM)",
     description:
       "Designed and implemented a Python-based framework for solving multi-attribute decision-making problems. Engineered modular, extensible components for flexible decision analysis.",
+    githubUrl: "https://github.com/sfarshian/MADM",
     icon: Layers,
   },
   {
     title: "User Management Backend",
     description:
       "Developed a robust backend system using Java and Spring Boot. Employed Aspect-Oriented Programming (AOP) and custom annotations to modularize cross-cutting concerns.",
+    githubUrl: "https://github.com/sfarshian/UserManagement",
     icon: Code2,
   },
 ];
@@ -134,7 +137,7 @@ export const socialLinks = [
 export const navSections = [
   { id: "hero", label: "Home" },
   { id: "experience", label: "Experience" },
-  { id: "arsenal", label: "Arsenal" },
+  { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
   { id: "education", label: "Education" },
   { id: "contact", label: "Contact" },
