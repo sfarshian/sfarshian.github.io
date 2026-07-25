@@ -35,7 +35,7 @@ export interface SkillCategory {
 export const profile = {
   name: "Sahand Farshian",
   title: "Software Developer & Industrial Engineer",
-  bio: "I bridge the gap between systems thinking and technical innovation. I am proficient in Python, Java, and databases such as MySQL, Oracle, and MongoDB. I am particularly drawn to mathematical optimisation, machine learning, and the transformative power of data.",
+  bio: "I am not your typical Software Engineer. I bridge the gap between overarching systems thinking and deep technical execution. Drawing on my foundation in industrial engineering, I architect robust enterprise Java backends and design intelligent multi-agent AI workflows. I am proficient in Python, Java, and complex database management (Oracle, MySQL, MongoDB). From mathematical optimization to machine learning, I am driven by the transformative power of data to build solutions that scale.",
   email: "sfarshian3@gmail.com",
   telegram: "@sfarshian",
   github: "github.com/sfarshian",

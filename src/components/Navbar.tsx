@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { navSections } from "../data";
 
-export default function Navbar() {
+export default function Navbar({ blogActive }: { blogActive?: boolean }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -14,11 +14,21 @@ export default function Navbar() {
 
   const scrollTo = (id: string) => {
     setIsMenuOpen(false);
+    if (id === "blog") {
+      window.location.hash = "#/blog";
+      return;
+    }
+    // Clear any blog hash before scrolling
+    if (window.location.hash.startsWith("#/blog")) {
+      window.location.hash = "";
+    }
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const isBlogLink = (id: string) => id === "blog";
 
   return (
     <nav
@@ -42,11 +52,26 @@ export default function Navbar() {
             <button
               key={s.id}
               onClick={() => scrollTo(s.id)}
-              className="px-3 py-1.5 text-[13px] font-medium text-foreground-secondary hover:text-primary hover:bg-primary/5 rounded-md transition-colors cursor-pointer bg-transparent border-none"
+              className={`px-3 py-1.5 text-[13px] font-medium rounded-md transition-colors cursor-pointer bg-transparent border-none ${
+                blogActive && isBlogLink(s.id)
+                  ? "text-primary bg-primary/5"
+                  : "text-foreground-secondary hover:text-primary hover:bg-primary/5"
+              }`}
             >
               {s.label}
             </button>
           ))}
+          {/* Blog link — always present, highlighted when active */}
+          <button
+            onClick={() => scrollTo("blog")}
+            className={`px-3 py-1.5 text-[13px] font-medium rounded-md transition-colors cursor-pointer bg-transparent border-none ${
+              blogActive
+                ? "text-primary bg-primary/5"
+                : "text-foreground-secondary hover:text-primary hover:bg-primary/5"
+            }`}
+          >
+            Blog
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -66,11 +91,25 @@ export default function Navbar() {
             <button
               key={s.id}
               onClick={() => scrollTo(s.id)}
-              className="text-left px-3 py-2 text-[14px] font-medium text-foreground-secondary hover:text-primary hover:bg-primary/5 rounded-md transition-colors cursor-pointer bg-transparent border-none"
+              className={`text-left px-3 py-2 text-[14px] font-medium rounded-md transition-colors cursor-pointer bg-transparent border-none ${
+                blogActive && isBlogLink(s.id)
+                  ? "text-primary bg-primary/5"
+                  : "text-foreground-secondary hover:text-primary hover:bg-primary/5"
+              }`}
             >
               {s.label}
             </button>
           ))}
+          <button
+            onClick={() => scrollTo("blog")}
+            className={`text-left px-3 py-2 text-[14px] font-medium rounded-md transition-colors cursor-pointer bg-transparent border-none ${
+              blogActive
+                ? "text-primary bg-primary/5"
+                : "text-foreground-secondary hover:text-primary hover:bg-primary/5"
+            }`}
+          >
+            Blog
+          </button>
         </div>
       )}
     </nav>
