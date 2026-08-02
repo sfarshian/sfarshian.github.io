@@ -51,7 +51,7 @@ export const workExperience: WorkExperience[] = [
   {
     title: "Software Integration Engineer (Contract)",
     company: "Savola Group",
-    period: "Sep 2024 – Present",
+    period: "Sep 2024",
     points: [
       "Engineered middleware integrating Oracle E-Business Suite with the governmental National Trade Single Window (NTSW) platform.",
       "Built a lightweight REST-based integration system, effectively eliminating manual shipment registration.",
