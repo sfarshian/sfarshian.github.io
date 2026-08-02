@@ -2,13 +2,17 @@ import type { ComponentType, SVGProps } from "react";
 import {
   Mail,
   Send,
-  Briefcase,
   Code2,
   Wrench,
   Layers,
   Globe,
   Users,
+  ArrowLeftRight,
+  Brain,
+  LineChart,
+  Database,
 } from "lucide-react";
+
 
 type IconType = ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>;
 
@@ -21,9 +25,10 @@ export interface WorkExperience {
 
 export interface Project {
   title: string;
-  description: string;
+  description: string[];
   githubUrl: string;
   icon: IconType;
+  isPrivate?: boolean;
 }
 
 export interface SkillCategory {
@@ -44,22 +49,34 @@ export const profile = {
 
 export const workExperience: WorkExperience[] = [
   {
-    title: "Java / Spring Boot Developer",
-    company: "Faraboom Open Banking Solutions",
-    period: "Jun 2022 – Mar 2024",
+    title: "Software Integration Engineer (Contract)",
+    company: "Savola Group",
+    period: "Sep 2024 – Present",
     points: [
-      "Designed, enhanced, and maintained banking APIs serving production traffic",
-      "Developed a real-time monitoring and alerting system using Grafana and Prometheus",
-      "Created comprehensive documentation of legacy systems utilizing UML and Activity Diagrams",
+      "Engineered middleware integrating Oracle E-Business Suite with the governmental National Trade Single Window (NTSW) platform.",
+      "Built a lightweight REST-based integration system, effectively eliminating manual shipment registration.",
+      "Designed enterprise data pipelines to ensure strict regulatory compliance and robust transactional integrity.",
     ],
   },
   {
     title: "Planning Trainee",
-    company: "Savola Behshahr Company",
+    company: "Savola Group",
     period: "Jun 2024 – Sep 2024",
     points: [
-      "Designed and implemented a system to integrate company shipment data with the NTSW API",
-      "Gained foundational knowledge in material resource planning (MRP)",
+      "Worked within the Planning Department to gain hands-on experience in production planning, demand forecasting, Master Production Scheduling (MPS), and material programming.",
+      "Analyzed planning strategies for high lead-time products and evaluated inventory optimization techniques.",
+      "Evaluated production-line optimization and operational efficiency using Industrial Engineering principles, enabling software solutions aligned with real-world business processes.",
+    ],
+  },
+  {
+    title: "Java / Spring Boot Developer",
+    company: "Faraboom Open Banking",
+    period: "Jun 2022 – Mar 2024",
+    points: [
+      "Architected and scaled RESTful backend services using Java and Spring Boot, optimizing database access and memory management for low-latency banking transactions.",
+      "Engineered integration bridges that exposed legacy banking systems through secure, modern REST APIs for financial institution partners.",
+      "Built a real-time observability platform using Grafana and Prometheus with webhook-based SMS notifications for proactive incident response.",
+      "Produced architectural documentation, UML specifications, and activity diagrams to improve system maintainability and knowledge transfer.",
     ],
   },
 ];
@@ -71,22 +88,47 @@ export const skillCategories: SkillCategory[] = [
     skills: ["Java", "Python", "SQL"],
   },
   {
-    name: "Core Frameworks",
-    icon: Layers,
-    skills: ["Spring Boot", "Spring", "FastAPI", "Hibernate", "Spring Data JPA", "Eureka", "Spring Cloud Consul", "Spring Security"],
+    name: "Backend",
+    icon: Layers, // or Server
+    skills: [
+      "Spring Boot",
+      "Spring Security",
+      "Hibernate",
+      "REST",
+      "SOAP",
+      "JWT",
+      "OAuth2",
+      "Java 21 Virtual Threads"
+    ],
   },
   {
-    name: "Tools & Databases",
+    name: "AI",
+    icon: Brain, // Make sure to import an appropriate icon like Brain or Bot
+    skills: ["FastAPI", "Pandas", "NumPy", "AI Agents", "LLM Applications"],
+  },
+  {
+    name: "Optimization",
+    icon: LineChart, // LineChart, Activity, or Briefcase
+    skills: [
+      "Pyomo",
+      "PuLP",
+      "amplpy",
+      "Operations Research",
+      "Production Planning",
+      "MADM"
+    ],
+  },
+  {
+    name: "Databases",
+    icon: Database, // Make sure to import a Database icon
+    skills: ["Oracle", "MySQL", "MongoDB", "SQLite"],
+  },
+  {
+    name: "Tools",
     icon: Wrench,
-    skills: ["Oracle", "MongoDB", "Docker", "Prometheus", "Grafana", "Maven"],
-  },
-  {
-    name: "Engineering Concepts",
-    icon: Briefcase,
-    skills: ["RESTful APIs", "Microservices", "OAuth2", "JWT Authentication", "AOP"],
+    skills: ["Git", "Docker", "Maven", "Grafana", "Prometheus", "UML"],
   },
 ];
-
 export const education = {
   degree: "B.Sc. in Industrial Engineering",
   school: "Kharazmi University",
@@ -96,16 +138,34 @@ export const education = {
 
 export const projects: Project[] = [
   {
+    title: "Oracle ERP & BazaarGah Integration Middleware",
+    description: [
+      "Architected a Spring Boot middleware platform automating workflows between the BazaarGah portal and Oracle ERP, eliminating manual data entry.",
+      "Modernized legacy SOAP services by wrapping them behind lightweight, fast REST APIs.",
+      "Leveraged Java 21 Virtual Threads for high-throughput concurrent processing.",
+      "Built a robust transactional persistence layer with Hibernate to guarantee cross-system data integrity."
+    ],
+    githubUrl: "", // Private enterprise project
+    icon: ArrowLeftRight,
+    isPrivate: true,
+  },
+  {
     title: "Multi-Attribute Decision Making (MADM)",
-    description:
-      "Designed and implemented a Python-based framework for solving multi-attribute decision-making problems. Engineered modular, extensible components for flexible decision analysis.",
+    description: [
+      "Engineered a modular Python decision-support library implementing core algorithms including TOPSIS, SAW, ELECTRE I, and permutation methods.",
+      "Utilized Pandas and NumPy for optimized matrix operations and automated data normalization.",
+      "Created a scalable framework to evaluate and rank complex industrial engineering alternatives to streamline data-driven decision-making."
+    ],
     githubUrl: "https://github.com/sfarshian/MADM",
     icon: Layers,
   },
   {
     title: "User Management Backend",
-    description:
-      "Developed a robust backend system using Java and Spring Boot. Employed Aspect-Oriented Programming (AOP) and custom annotations to modularize cross-cutting concerns.",
+    description: [
+      "Developed a secure, stateless REST API using Spring Boot, integrating Google OAuth2 and JWT for robust identity verification and session management.",
+      "Implemented Aspect-Oriented Programming (AOP) for centralized request logging and Role-Based Access Control (RBAC).",
+      "Designed scalable data persistence utilizing Spring Data JPA and Hibernate to manage user profiles and authorization states."
+    ],
     githubUrl: "https://github.com/sfarshian/UserManagement",
     icon: Code2,
   },
