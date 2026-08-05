@@ -1,6 +1,6 @@
 ---
 title: "Stop Solving Everything with AI: Why Optimization Still Wins at Decision Making"
-date: "2026-07-22"
+date: "2026-08-05"
 summary: "ML is great at predicting what will happen. Optimization is what actually decides what you should do. Here's why the best backend systems use both — and why reaching for AI first is often the wrong move."
 tags: Optimization, Operations Research, Linear Programming, Machine Learning, Artificial Intelligence, Java
 ---
