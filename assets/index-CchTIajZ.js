@@ -108,7 +108,7 @@ tail the database transaction log directly with zero query overhead.
 The Outbox Pattern is a foundational pillar for robust enterprise backend design. It trades momentary complexity for absolute data integrity, ensuring your distributed systems never lose an event when databases and brokers fall out of sync.
 `,Re=`---
 title: "Stop Solving Everything with AI: Why Optimization Still Wins at Decision Making"
-date: "2026-07-22"
+date: "2026-08-05"
 summary: "ML is great at predicting what will happen. Optimization is what actually decides what you should do. Here's why the best backend systems use both — and why reaching for AI first is often the wrong move."
 tags: Optimization, Operations Research, Linear Programming, Machine Learning, Artificial Intelligence, Java
 ---
